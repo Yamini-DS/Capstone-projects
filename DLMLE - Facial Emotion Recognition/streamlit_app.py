@@ -30,7 +30,7 @@ textColor="#e807bc"
 
 st.title('Welcome to Face Emotion Recognition Application')
 
-option = st.radio('Which type of detection would you like to make?', ('an Image', 'a Video', 'a Live'))
+option = st.radio('Which type of detection would you like to make?', ('an Image', 'a Video', 'a Live','testing live'))
 st.header('You selected {} option for emotion detection'.format(option))
 
 if option == 'an Image':
@@ -226,21 +226,8 @@ elif option == 'a Video':
 
     test_video_pred('None')
 
+
 elif option == 'a Live':
-
-    webrtc_streamer(key="example")
-    st.write('Live functioning')
-
-
-
-
-
-
-
-
-
-
-else:
 
     st.subheader('Play the Live video while detecting')
 
@@ -378,3 +365,18 @@ else:
 
     test_video_pred('None')
 
+elif option == 'testing live':
+
+    webrtc_streamer(key="example")
+    st.write('Live functioning')
+    st.write('This is running using newly introduced webrtc tool which can access the camera whereas opencv cannot function properly in streamlit then still it has some problems as on screen')
+    st.write('This is the end of the testing live notes. See you')
+
+else:
+    st.write('You did not select the proper option as specified. Please select a valid option')
+    st.write('If one of the four options was selected and it did not work. Please clear the cache and rerun the application')
+    st.write('Thanks for understanding')
+
+st.write('Thank you. I hope you got emotions detected which are hidden in the picture or an image or a video')
+st.write('See you soon')
+st.write('This is created by Yamini')
